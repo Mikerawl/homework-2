@@ -1,0 +1,247 @@
+body {margin: 0;
+padding: 0;
+font-family: 'Readex Pro', sans-serif;
+font-size: 1rem;
+}
+.container {
+  width: 100vw;
+  height: 100%;
+}
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    background-color: aquamarine;
+    width: 100vw;
+    height: 100px;
+    padding: 0px;
+    flex-wrap: nowrap;
+
+}
+.name {
+    padding-left: 20px;
+    background-color: #ccc;
+    width: 50%;
+}
+.navbar {
+    display: flex;
+    flex-direction: row;
+    padding-right: 20px;
+    width: 50%;
+    justify-content: flex-end; /*   space-between???? */
+    align-content: center;
+    background-color: #aaa;
+}
+.link {
+    margin: 0 15px 0 0;
+    align-self: center;
+}
+
+/*
+
+BELOW HERE ARE THE LINK AND HOVER STYLES
+
+By doing: .link a  only the a styles that happen
+under link are effected by this css
+*/
+
+.link a {
+    color: black;
+    text-decoration: none;
+}
+.link a:hover {
+    text-decoration: underline;
+    color: red;
+    text-decoration-color: red;
+    text-decoration-thickness: .125em;
+    text-underline-offset: 1.5px;
+    font-weight: 600;
+}
+
+
+main {
+    display: grid;
+    grid-template-columns: 150px 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "subtitle subtitle subtitle"
+    "sidebar_about bio bio"
+    "sidebar_work project1 project1"
+    "sidebar_work project2 project3"
+    "sidebar_work project4 project5"
+    "sidebar_contact footer footer";
+    width: 80vw;
+    margin: 10px auto 5px;
+    grid-gap: 10px;
+}
+.subtitle {
+    grid-area: subtitle;
+    background-image: url(../assets/ice.jpg);
+    background-size: auto;
+    background-repeat: no-repeat;
+    object-position: center center;
+    color: white;
+    background-color: #333;
+
+}
+
+.bio {
+    grid-area: bio;
+    background-image: url(../assets/ice.jpg);
+    background-size: auto;
+    background-repeat: no-repeat;
+    object-position: center center;
+    padding: 5px;
+    background-color: #ccc;
+}
+.project1 {
+    position: relative;
+    grid-area: project1;
+    background-image: url(../assets/tree3.jpg);
+    background-size: auto;
+    background-repeat: no-repeat;
+    object-position: center center;
+    height: 220px;
+    padding: 5px;
+    background-color: #333;
+    }
+
+.proj1_box{
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    background-color: #aaaaaa;
+    color: black;
+    padding: 1rem;
+}
+
+.project2 {
+    position: relative;
+    grid-area: project2;
+    background-image: url(../assets/yellow-flower.jpg);
+    object-position: center center;
+    height: 180px;
+    background-color: #eee;
+}
+.proj2_box{
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    background-color: #aaaaaa;
+    color: black;
+    padding: 1rem;
+}
+.project3 {
+    grid-area: project3;
+    background-image: url(../assets/purple.jpg);
+    object-position: center center;
+    height: 180px;
+    background-color: #222;
+}
+.project4 {
+    grid-area: project4;
+    background-image: url(../assets/canyon.jpg);
+    object-position: center center;
+
+    height: 180px;
+    background-color: #ccc;
+}
+.project5 {
+    grid-area: project5;
+    background-image: url(../assets/lizard.jpg);
+    object-position: center center;
+
+    height: 180px;
+    background-color: #pink;
+}
+
+footer {
+    grid-area: footer;  /* WE WERE MISSING THIS */
+    background-color: black;
+    color: white;
+    padding-left: 20px;
+}
+.navbar_footer {
+    display: flex;
+    flex-direction: row;
+    padding-right: 20px;
+    width: 100%;
+    justify-content: space-between;
+    align-content: center;
+
+}
+.sidebar_contact {
+    grid-area: sidebar_contact;
+    border-right: 2px solid black;
+    border-bottom: none;
+}
+.sidebar_work {
+    grid-area: sidebar_work;
+    border-right: 2px solid black;
+    border-bottom: none;
+}
+
+.sidebar_about {
+    grid-area: sidebar_about;
+    border-right: 2px solid black;
+    border-bottom: none;
+}
+
+
+
+/* EVERY THING BELOW THIS IS FOR MOBILE PHONES */
+
+
+@media (max-width: 485px)  {
+    main {
+        display: grid;
+        grid-template-columns: 100vw;
+        grid-template-rows: auto;
+        grid-template-areas:
+    "subtitle"
+    "sidebar_about"
+    "bio"
+    "sidebar_work"
+    "project1"
+    "project2"
+    "project3"
+    "project4"
+    "project5"
+    "sidebar_contact"
+    "footer";
+        margin: 10px 0 ;
+    }
+
+    header {
+        padding: 0px;
+        flex-wrap: wrap;
+    }
+    .name {
+        width: 100%;
+        text-align: center;
+    }
+    .navbar {
+        padding-right: 0px;
+        width: 100%;
+        justify-content: center; /*   space-between???? */
+        align-content: center;
+    }
+    .sidebar_contact {
+        grid-area: sidebar_contact;
+        border-right: none;
+        border-bottom: 2px solid black;
+    }
+    .sidebar_work {
+        grid-area: sidebar_work;
+        border-right: none;
+        border-bottom: 2px solid black;
+    }
+
+    .sidebar_about {
+        grid-area: sidebar_about;
+        border-right: none;
+        border-bottom: 2px solid black;
+    }
+}
+
